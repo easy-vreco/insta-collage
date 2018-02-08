@@ -1,0 +1,22 @@
+/* Estilos generales*/
+/*@font-face {
+  No borrar, es para el tipo de letar de instagram
+}*/
+
+.instagram-background {
+    /*background: linear-gradient(to bottom left, rgb(74, 204, 130) 50%, rgb(238,174,61) 20%, rgb(245, 135, 71));*/
+    background-color: skyblue;
+}
+
+.white {
+  color: white;
+}
+
+/* Estilos al encabezado */
+.navbar>.container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
