@@ -1,0 +1,25 @@
+/* STYLE FOR THE COLLAGE*/
+ .marco-foto {
+    min-width: 100px;
+    min-height: 100px;
+    border: 1px solid black;
+    margin-top: 20px;
+  }
+
+  .marco-largo {
+    min-width: 200px;
+    min-height: 220px;
+    border: 1px solid black;
+    margin-top: 20px;
+  }
+  
+  .marco-foto > img {
+    margin-bottom: 0;
+  }
+
+  img {
+    width: 250px;
+    height: 200px;
+    margin-bottom: 30px;
+  }
+  
