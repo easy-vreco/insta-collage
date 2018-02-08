@@ -21,17 +21,31 @@ $(document).ready(function () {
   $inputEmail.on('input', function () {
     console.log($(this).val());
     var PATTERNEMAIL = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/;
-    var $result = PATTERNEMAIL.test($(this).val());
-    console.log($result);
+    var $resultEmail = PATTERNEMAIL.test($(this).val());
+    console.log($resultEmail);
   });
 
   $inputPassword.on('input', function (event) {
     console.log($(this).val());
+    /* const PATTERNPASSWORD = /^[\d]{6,}$/;
+    const PATTERNNUMBERS = /[0-9]/g;
+    let $resultPassword1 = PATTERNPASSWORD.test($(this).val());
+    // let $resultPassword2 = PATTERNNUMBERS.test($(this).val());
+    console.log($resultPassword1);
+    // console.log($resultPassword2);*/
+    var $arrayOfCharacters = $(this).val().join();
+    $arrayOfCharacters.sort(compare);
+    var compare = function compare(st, nd) {
+      return a - b;
+    };
+    console.log(compare());
     if ($(this).val().length >= 6) {
-      // debugger;
-      $('#register-form-group').addClass('has-success');
+      /* No se añaden los estilos - Comprobar*/
+      alert('Cumple');
+      $inputPassword.addClass('has-success');
     } else {
-      $('#register-form-group').addClass('has-error');
+      $inputPassword.addClass('has-error');
+      alert('No cumple');
     }
   });
 
@@ -170,25 +184,25 @@ $(document).ready(function () {
       var credential = error.credential;
       // ...
     });
-  });
 
-  /* Redireccionando */
-  firebase.auth().getRedirectResult().then(function (result) {
-    if (result.credential) {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = result.credential.accessToken;
+    /* Redireccionando */
+    firebase.auth().getRedirectResult().then(function (result) {
+      if (result.credential) {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = result.credential.accessToken;
+        // ...
+      }
+      // The signed-in user info.
+      var user = result.user;
+    }).catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
       // ...
-    }
-    // The signed-in user info.
-    var user = result.user;
-  }).catch(function (error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    // ...
+    });
   });
 });

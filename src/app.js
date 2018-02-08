@@ -38,14 +38,9 @@ $(document).ready(function() {
     };
     console.log(compare());
     if ($(this).val().length >= 6) {
-<<<<<<< HEAD
-      // debugger;
-      $('#register-form-group').addClass('has-success');
-=======
       /* No se añaden los estilos - Comprobar*/ 
       alert('Cumple');
       $inputPassword.addClass('has-success');
->>>>>>> 160f54a1945e0da919497053152403df786259f0
     } else {
       $inputPassword.addClass('has-error');
       alert('No cumple');
