@@ -1,0 +1,27 @@
+{
+  "name": "instagram-collage",
+  "version": "1.0.0",
+  "description": "Página con una galería de imágenes ",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel --presets env src -d public/js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easy-vreco/insta-collage.git"
+  },
+  "keywords": [
+    "img"
+  ],
+  "author": "Araceli Gutarra, Pamela De La Cruz, Lesly Nomberto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/easy-vreco/insta-collage/issues"
+  },
+  "homepage": "https://github.com/easy-vreco/insta-collage#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
