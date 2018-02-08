@@ -26,6 +26,7 @@ $(document).ready(function() {
   $inputPassword.on('input', function(event) {
     console.log($(this).val());
     if ($(this).val().length >= 6 && $(this).val() !== '123456') {
+      btnEnter.removeAttribute('disabled');
       alert('Cumple');
       $inputPassword.addClass('has-success');
     } else {
