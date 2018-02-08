@@ -29,7 +29,6 @@ $(document).ready(function () {
     console.log($(this).val());
     if ($(this).val().length >= 6 && $(this).val() !== '123456') {
       btnEnter.removeAttribute('disabled');
-      alert('Cumple');
       $inputPassword.addClass('has-success');
     } else {
       $inputPassword.addClass('has-error');
@@ -65,7 +64,13 @@ $(document).ready(function () {
     // let enterPassword = document.getElementById('enter-password').value;
     /* console.log(enterEmail);
      console.log(enterPassword); */
-
+    if (btnEnter.getAttribute('disabled' === false)) {
+      btnEnter.on('click', function () {
+        setTimeout(function () {
+          window.location.href = 'views/collage.html';
+        }, 3000);
+      });
+    }
     /* Inicia sesión */
     firebase.auth().signInWithEmailAndPassword(enterEmail, enterPassword).catch(function (error) {
       // Handle Errors here.
