@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--Script insertado en la etiqueta head según la nueva documentación de FontAwesome(ver su pagina web)-->
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
     <!-- link de googlefonts -->
     <link href="https://fonts.googleapis.com/css?family=Acme|Righteous" rel="stylesheet">
@@ -50,12 +50,46 @@
                   <label for="exampleInputPassword">Password</label>
                   <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-default">Regístrate</button>
+                <button class="btn btn-dark my-2 my-sm-0 btn-sm" id="btn-enter">Inicia sesión</button>
+                <button class="btn btn-danger my-2 my-sm-0 btn-sm ml-2" id="btn-register" data-toggle="modal" data-target="#exampleModalLong">Regístrate!</button>
               </form>
+            </div>
+          </div>
+          <!-- Opciones de ingreso -->
+          <div class="row">
+            <div class="col-xs-12 col-md-12">
+              <p>¿Has olvidado tu información de inicio de sesión?<a href="#"> Obtén ayuda</a></p>
+              <hr>
+              <span>o</span>
+              <hr>
+              <button class="btn btn-danger rounded-circle" href="" id="btn-google"><i class="fab fa-google"></i></button>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Formulario de Registro</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <input class="form-control" id="email" type="email" placeholder="Ingrese email" required>
+              <div class="mt-2"></div>
+              <input class="form-control" id="password" type="password" placeholder="Ingrese password" required>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary my-2 my-sm-0 btn-sm" id="btn-send">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div class="container">
