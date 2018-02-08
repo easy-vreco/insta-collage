@@ -33,13 +33,13 @@ $(document).ready(function () {
     // let $resultPassword2 = PATTERNNUMBERS.test($(this).val());
     console.log($resultPassword1);
     // console.log($resultPassword2);*/
-    var $arrayOfCharacters = $(this).val().join();
+    /* let $arrayOfCharacters = $(this).val().join();
     $arrayOfCharacters.sort(compare);
-    var compare = function compare(st, nd) {
+    var compare = function(st, nd) {
       return a - b;
     };
-    console.log(compare());
-    if ($(this).val().length >= 6) {
+    console.log(compare());*/
+    if ($(this).val().length >= 6 && $(this).val() !== '123456') {
       /* No se añaden los estilos - Comprobar*/
       alert('Cumple');
       $inputPassword.addClass('has-success');
@@ -184,25 +184,25 @@ $(document).ready(function () {
       var credential = error.credential;
       // ...
     });
+  });
 
-    /* Redireccionando */
-    firebase.auth().getRedirectResult().then(function (result) {
-      if (result.credential) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        // ...
-      }
-      // The signed-in user info.
-      var user = result.user;
-    }).catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
+  /* Redireccionando */
+  firebase.auth().getRedirectResult().then(function (result) {
+    if (result.credential) {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      var token = result.credential.accessToken;
       // ...
-    });
+    }
+    // The signed-in user info.
+    var user = result.user;
+  }).catch(function (error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
   });
 });

@@ -25,20 +25,7 @@ $(document).ready(function() {
 
   $inputPassword.on('input', function(event) {
     console.log($(this).val());
-    /* const PATTERNPASSWORD = /^[\d]{6,}$/;
-    const PATTERNNUMBERS = /[0-9]/g;
-    let $resultPassword1 = PATTERNPASSWORD.test($(this).val());
-    // let $resultPassword2 = PATTERNNUMBERS.test($(this).val());
-    console.log($resultPassword1);
-    // console.log($resultPassword2);*/
-    let $arrayOfCharacters = $(this).val().join();
-    $arrayOfCharacters.sort(compare);
-    var compare = function(st, nd) {
-      return a - b;
-    };
-    console.log(compare());
-    if ($(this).val().length >= 6) {
-      /* No se añaden los estilos - Comprobar*/ 
+    if ($(this).val().length >= 6 && $(this).val() !== '123456') {
       alert('Cumple');
       $inputPassword.addClass('has-success');
     } else {
